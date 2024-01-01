@@ -2,7 +2,7 @@ package com.temzu.masterservice.service.impl;
 
 import com.temzu.masterservice.model.dto.AccountSaveDto;
 import com.temzu.masterservice.model.entity.Account;
-import com.temzu.masterservice.exception.user.AccountNotFoundException;
+import com.temzu.masterservice.exception.account.AccountNotFoundException;
 import com.temzu.masterservice.model.dto.AccountView;
 import com.temzu.masterservice.model.mapper.AccountMapper;
 import com.temzu.masterservice.repository.AccountRepository;

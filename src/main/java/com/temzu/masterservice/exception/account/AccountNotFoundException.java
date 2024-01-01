@@ -1,4 +1,4 @@
-package com.temzu.masterservice.exception.user;
+package com.temzu.masterservice.exception.account;
 
 public class AccountNotFoundException extends AccountException {
 
