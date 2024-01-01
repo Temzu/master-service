@@ -1,13 +1,13 @@
 package com.temzu.masterservice.service;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import com.temzu.masterservice.model.dto.UserSaveDto;
 import com.temzu.masterservice.model.dto.UserView;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class UserServiceTest extends ServiceTestBase {
 
