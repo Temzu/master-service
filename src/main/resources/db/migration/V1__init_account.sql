@@ -1,4 +1,4 @@
-create table users
+create table account
 (
     uid        varchar(255) primary key,
     login      varchar(30) unique not null,

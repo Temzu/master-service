@@ -1,10 +1,10 @@
 package com.temzu.masterservice.repository;
 
-import com.temzu.masterservice.model.entity.User;
+import com.temzu.masterservice.model.entity.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, String> {
+public interface AccountRepository extends JpaRepository<Account, String> {
 
 }

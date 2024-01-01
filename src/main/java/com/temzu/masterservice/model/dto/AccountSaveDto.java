@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
-public class UserSaveDto {
+public class AccountSaveDto {
 
   @NotNull(message = "User uid must be not null")
   private String uid;

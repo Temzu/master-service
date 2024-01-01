@@ -3,7 +3,7 @@ package com.temzu.masterservice.model.dto;
 import lombok.Data;
 
 @Data
-public class UserView {
+public class AccountView {
 
   private String uid;
   private String login;

@@ -14,11 +14,11 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Table(name = "users")
+@Table(name = "account")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class User {
+public class Account {
 
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)

@@ -3,16 +3,16 @@ package com.temzu.masterservice.service;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import com.temzu.masterservice.model.dto.UserSaveDto;
-import com.temzu.masterservice.model.dto.UserView;
+import com.temzu.masterservice.model.dto.AccountSaveDto;
+import com.temzu.masterservice.model.dto.AccountView;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-class UserServiceTest extends ServiceTestBase {
+class AccountServiceTest extends ServiceTestBase {
 
   @Autowired
-  private UserService userService;
+  private AccountService accountService;
 
   @BeforeEach
   void setUp() {
@@ -21,8 +21,8 @@ class UserServiceTest extends ServiceTestBase {
 
   @Test
   void testFindByUid() {
-    UserView testUser = getTestUser();
-    UserView user = userService.findByUid(getTestUser().getUid());
+    AccountView testUser = getTestAccount();
+    AccountView user = accountService.findByUid(getTestAccount().getUid());
 
     assertEquals(testUser.getUid(), user.getUid());
     assertEquals(testUser.getFirstname(), user.getFirstname());
@@ -33,16 +33,16 @@ class UserServiceTest extends ServiceTestBase {
 
   @Test
   void testFindByUidFail() {
-    assertThrows(RuntimeException.class, () -> userService.findByUid("uid"));
+    assertThrows(RuntimeException.class, () -> accountService.findByUid("uid"));
   }
 
   @Test
   void save() {
-    UserSaveDto dto = new UserSaveDto();
-    dto.setUid(getTestUser().getUid());
+    AccountSaveDto dto = new AccountSaveDto();
+    dto.setUid(getTestAccount().getUid());
     dto.setFirstname("new firstname");
     dto.setSurname("new surname");
-    UserView saved = userService.save(dto);
+    AccountView saved = accountService.save(dto);
 
     assertEquals(dto.getFirstname(), saved.getFirstname());
     assertEquals(dto.getSurname(), saved.getSurname());

@@ -2,9 +2,9 @@ package com.temzu.masterservice.exception.user;
 
 import com.temzu.masterservice.exception.MasterServiceException;
 
-public abstract class UserException extends MasterServiceException {
+public abstract class AccountException extends MasterServiceException {
 
-  public UserException(String message) {
+  public AccountException(String message) {
     super(message);
   }
 }
