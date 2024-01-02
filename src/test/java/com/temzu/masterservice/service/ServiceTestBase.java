@@ -14,25 +14,30 @@ public abstract class ServiceTestBase {
 
   @Autowired private AccountRepository accountRepository;
   @Autowired private AccountMapper accountMapper;
-  private AccountView testAccount;
+  private AccountView testAccountView;
+  private Account testAccount;
 
   @BeforeEach
   void setUp() {
-    testAccount = accountMapper.toDto(accountRepository.save(createUser()));
+    testAccount = accountRepository.save(createUser());
+    testAccountView = accountMapper.toView(testAccount);
   }
 
   @AfterEach
   void tearDown() {
-    accountRepository.deleteById(getTestAccount().getUid());
+    accountRepository.deleteById(getTestAccountView().getUid());
   }
 
-  protected AccountView getTestAccount() {
+  protected AccountView getTestAccountView() {
+    return testAccountView;
+  }
+
+  protected Account getTestAccount() {
     return testAccount;
   }
 
   protected Account createUser() {
     Account account = new Account();
-    account.setLogin("testUser");
     account.setEmail("test@gmail.com");
     account.setPassword("123");
     account.setPhone("79001002022");

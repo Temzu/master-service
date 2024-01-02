@@ -6,7 +6,7 @@ import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Data
-public class AuthRequest {
+public class SignInRequest {
 
   @NotBlank(message = "country code must not be blank and not be null")
   @Pattern(regexp="^\\d*$", message = "phone contains invalid characters")

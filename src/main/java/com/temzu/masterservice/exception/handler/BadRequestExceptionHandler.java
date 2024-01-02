@@ -1,6 +1,7 @@
 package com.temzu.masterservice.exception.handler;
 
 import com.temzu.masterservice.exception.MasterServiceError;
+import com.temzu.masterservice.exception.account.AccountWrongCredentialsException;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
@@ -22,4 +23,9 @@ public class BadRequestExceptionHandler {
     return new ResponseEntity<>(new MasterServiceError(messages), HttpStatus.BAD_REQUEST);
   }
 
+  @ExceptionHandler(AccountWrongCredentialsException.class)
+  public ResponseEntity<?> catchAccountWrongCredentialsException(
+      AccountWrongCredentialsException ex) {
+    return new ResponseEntity<>(new MasterServiceError(ex.getMessage()), HttpStatus.BAD_REQUEST);
+  }
 }

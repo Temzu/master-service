@@ -18,4 +18,7 @@ public class AccountSaveDto {
   @NotNull(message = "Surname must be not null")
   private String surname;
 
+  private String password;
+
+  private String phone;
 }

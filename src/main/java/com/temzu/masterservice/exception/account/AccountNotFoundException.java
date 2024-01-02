@@ -11,4 +11,8 @@ public class AccountNotFoundException extends AccountException {
   public static AccountNotFoundException byUid(String uid) {
     return new AccountNotFoundException("uid", uid);
   }
+
+  public static AccountNotFoundException byPhone(String phone) {
+    return new AccountNotFoundException("phone", phone);
+  }
 }

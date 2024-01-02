@@ -21,8 +21,8 @@ class AccountServiceTest extends ServiceTestBase {
 
   @Test
   void testFindByUid() {
-    AccountView testUser = getTestAccount();
-    AccountView user = accountService.findByUid(getTestAccount().getUid());
+    AccountView testUser = getTestAccountView();
+    AccountView user = accountService.findByUid(getTestAccountView().getUid());
 
     assertEquals(testUser.getUid(), user.getUid());
     assertEquals(testUser.getFirstname(), user.getFirstname());
@@ -39,7 +39,7 @@ class AccountServiceTest extends ServiceTestBase {
   @Test
   void save() {
     AccountSaveDto dto = new AccountSaveDto();
-    dto.setUid(getTestAccount().getUid());
+    dto.setUid(getTestAccountView().getUid());
     dto.setFirstname("new firstname");
     dto.setSurname("new surname");
     AccountView saved = accountService.save(dto);
